@@ -1,6 +1,6 @@
 class LineItemsController < ApplicationController
-  # GET /line_items
-  # GET /line_items.xml
+  skip_before_filter :authorize, :only => :create
+  
   def index
     @line_items = LineItem.all
 
